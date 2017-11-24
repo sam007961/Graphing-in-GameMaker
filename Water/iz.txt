@@ -1,0 +1,1 @@
+return (sin (t+argument0*(1+xofs)) + sin (t+argument1*(1+yofs)))/2;

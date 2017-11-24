@@ -1,0 +1,6 @@
+d3d_start();
+vrtxs = 1;
+t=0;
+xofs = -0.2;
+yofs = -0.4;
+alarm[0] = 5

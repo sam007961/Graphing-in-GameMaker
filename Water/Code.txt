@@ -1,0 +1,31 @@
+//Projection
+d3d_set_projection(0,0,10,10,10,10,0,0,1);
+draw_set_color(c_white);
+//test
+//d3d_draw_floor(20,20,0,60,60,0,tex_water,4,4);
+
+//Test sine wave
+x0 = 20; y0 = 20; width = 40;
+ix = 0; iy = 0;
+d3d_primitive_begin_texture(pr_trianglelist,tex_water);
+while (ix < width)
+    {
+    iy = 0;
+    while (iy < width)
+    {
+    d3d_vertex_texture(ix+x0,iy+y0,iz(ix,iy),(ix/40),(iy/40));
+    d3d_vertex_texture(ix+vrtxs+x0,iy+y0,iz(ix+vrtxs,iy),(ix+vrtxs)/40,(iy/40)); 
+    d3d_vertex_texture(ix+x0,iy+vrtxs+y0,iz(ix,iy+vrtxs),(ix/40),(iy+vrtxs)/40);
+    //----------------------------------------------------------------------------
+    d3d_vertex_texture(ix+vrtxs+x0,iy+y0,iz(ix+vrtxs,iy),(ix+vrtxs)/40,(iy/40));
+    d3d_vertex_texture(ix+x0,iy+vrtxs+y0,iz(ix,iy+vrtxs),(ix/40),(iy+vrtxs)/40);
+    d3d_vertex_texture(ix+vrtxs+x0,iy+vrtxs+y0,iz(ix+vrtxs,iy+vrtxs),(ix+vrtxs)/40,(iy+vrtxs)/40);
+    
+    
+    iy += vrtxs;
+    }
+    
+    
+    ix += vrtxs;
+    }
+d3d_primitive_end();
